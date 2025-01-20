@@ -1,0 +1,29 @@
+package com.demo;
+
+public class TypeCastingdemo {
+
+	public static void main(String[] args) {
+		  // Widening (Implicit) Type Casting
+        int intValue = 42;
+        double doubleValue = intValue; // int to double (automatic conversion)
+        System.out.println("Widening Type Casting (int to double): " + doubleValue);
+
+        // Narrowing (Explicit) Type Casting
+        double anotherDouble = 42.58;
+        int narrowedInt = (int) anotherDouble; // double to int (manual conversion)
+        System.out.println("Narrowing Type Casting (double to int): " + narrowedInt);
+
+        // Byte to int and vice versa
+        byte byteValue = 10;
+        int intFromByte = byteValue; // byte to int (automatic conversion)
+        System.out.println("Byte to int Type Casting: " + intFromByte);
+
+        int intToByte = 130;
+        byte narrowedByte = (byte) intToByte; // int to byte (manual conversion)
+        System.out.println("Int to byte Type Casting: " + narrowedByte);
+    }
+
+
+	}
+
+
