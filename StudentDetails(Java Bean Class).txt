@@ -1,0 +1,98 @@
+package com.demo;
+
+public class StudentDetails  {
+	    private String name;
+	    private int rollNumber;
+	    private int[] marks;
+
+	    // Constructor
+	    public StudentDetails(String name, int rollNumber, int[] marks) {
+	        this.name = name;
+	        this.rollNumber = rollNumber;
+	        this.marks = marks;
+	    }
+
+	    // Getter and Setter methods
+	    public String getName() {
+	        return name;
+	    }
+
+	    public void setName(String name) {
+	        this.name = name;
+	    }
+
+	    public int getRollNumber() {
+	        return rollNumber;
+	    }
+
+	    public void setRollNumber(int rollNumber) {
+	        this.rollNumber = rollNumber;
+	    }
+
+	    public int[] getMarks() {
+	        return marks;
+	    }
+
+	    public void setMarks(int[] marks) {
+	        this.marks = marks;
+	    }
+
+	    // Method to calculate percentage
+	    public double calculatePercentage() {
+	        int totalMarks = 0;
+	        for (int mark : marks) {
+	            totalMarks += mark;
+	        }
+	        return (totalMarks / (double)(marks.length * 100)) * 100;
+	    }
+
+	    // Method to determine the result based on percentage
+            public String getResult() {
+	        double percentage = calculatePercentage();
+	        if (percentage >= 60) {
+	            return "Pass - First Division";
+	        } else if (percentage >= 50) {
+	            return "Pass - Second Division";
+	        } else if (percentage >= 35) {
+	            return "Pass - Third Division";
+	        } else {
+	            return "Fail";
+	        }
+	    }
+
+	    // Method to print student details
+	    public void printStudentDetails() {
+	        System.out.println("Student Name: " + name);
+	        System.out.println("Roll Number: " + rollNumber);
+	        System.out.println("Percentage: " + calculatePercentage() + "%");
+	        System.out.println("Result: " + getResult());
+	        System.out.println("-------------------------");
+	    }
+	}
+
+
+
+package com.demo;
+
+public class StudentMain {
+	// Main.java (Driver class)
+	    public static void main(String[] args) {
+	        // Creating multiple Student objects
+	        int[] marks1 = {85, 90, 80, 70, 75};  // Total 400/500 = 80%
+	        int[] marks2 = {45, 50, 55, 60, 65};  // Total 275/500 = 55%
+	        int[] marks3 = {30, 35, 40, 20, 25};  // Total 150/500 = 30%
+
+	        StudentDetails student1 = new StudentDetails("Sita", 101, marks1);
+	        StudentDetails student2 = new StudentDetails("Geeta", 102, marks2);
+	        StudentDetails student3 = new StudentDetails("Radha", 103, marks3);
+
+	        // Printing student details
+	        System.out.println("Student Details:");
+	        student1.printStudentDetails();
+	        student2.printStudentDetails();
+	        student3.printStudentDetails();
+	    }
+	}
+
+
+
